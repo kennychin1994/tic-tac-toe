@@ -5,14 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { sendToVercelAnalytics } from './vitals';
 
-ReactDOM.render(
+/* ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
-);
-
-reportWebVitals(sendToVercelAnalytics);
+); */
 
 function Square(props) {
   return (
@@ -183,3 +181,5 @@ function calculateWinner(squares) {
   }
   return null;
 }
+
+reportWebVitals(sendToVercelAnalytics);
