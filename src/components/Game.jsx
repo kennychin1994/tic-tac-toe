@@ -1,3 +1,7 @@
+import React from 'react';
+
+import Board from './Board';
+
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -42,7 +46,7 @@ class Game extends React.Component {
     })
   }
   
-  function calculateWinner(squares) {
+  calculateWinner(squares) {
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
@@ -112,3 +116,5 @@ class Game extends React.Component {
     );
   }
 }
+
+export default Game;
