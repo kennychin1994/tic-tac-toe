@@ -1,9 +1,10 @@
 const Square = ({ onClick, value }) => {
   return (
-    <button className="square" onClick={onClick}>
+    <button className={`square ${value ? '' : 'allow'}`} onClick={onClick}>
       {value}
     </button>
   );
 }
+
 
 export default Square;
