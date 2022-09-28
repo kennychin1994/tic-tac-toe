@@ -103,7 +103,7 @@ code {
   outline: none;
 }
 
-button {
+.move-buttons {
   background-color: rgb(66, 66, 66);
   border-color: white;
   border-radius: 10px;
