@@ -66,11 +66,25 @@ class Game extends React.Component {
     return null;
   }
   
+  restart() {
+    this.setState({
+      history: [{
+        squares: Array(9).fill(null),
+      }],
+      locations: [{
+        col_row: [null, null],
+      }],
+      stepNumber: 0,
+      xIsNext: true,
+    })
+  }
+
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
     const winner = this.calculateWinner(current.squares);
     const locations = this.state.locations.slice();
+    const restart = <button onClick={() => this.restart()}>Restart</button>;
 
     const moves = history.map((step, move) => {
       const desc = move ?
@@ -79,7 +93,6 @@ class Game extends React.Component {
       return (
         <li key={move}>
           <button onClick={() => {
-
             this.jumpTo(move)
           }}>{desc}</button>
         </li>
@@ -108,7 +121,10 @@ class Game extends React.Component {
             />
           </div>
           <div className="game-info">
-            <div>{status}</div>
+            <div className="info-top">
+              <div className='status'>{status}</div>
+              <div className='restart'>{restart}</div>
+            </div>
             <ol>{moves}</ol>
           </div>
         </div>
