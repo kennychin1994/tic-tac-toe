@@ -50,6 +50,8 @@ ol, ul {
 .info-top {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 175px;
 }
 
 .status {
@@ -63,8 +65,9 @@ code {
 }
 
 .square {
-  background: #fff;
-  border: 1px solid #999;
+  background: rgb(66, 66, 66);
+  border: 1px solid white;
+  color: white;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
@@ -98,4 +101,16 @@ code {
 
 .square:focus {
   outline: none;
+}
+
+button {
+  background-color: rgb(66, 66, 66);
+  border-color: white;
+  border-radius: 10px;
+  border-width: 1px;
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
 }
