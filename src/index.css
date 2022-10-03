@@ -51,7 +51,7 @@ ol, ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 175px;
+  width: 200px;
 }
 
 .status {
@@ -101,14 +101,6 @@ code {
 
 .square:focus {
   outline: none;
-}
-
-.move-buttons {
-  background-color: rgb(66, 66, 66);
-  border-color: white;
-  border-radius: 10px;
-  border-width: 1px;
-  color: white;
 }
 
 button:hover {
