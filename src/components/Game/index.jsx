@@ -1,22 +1,14 @@
 import React from "react";
 import { useState } from "react";
-import styled from "styled-components";
+import { Button, StyledGame, GameBoard, Title, GameInfo, StyledStatus, StyledList, GlobalStyle } from "./styles";
 
-import Board from "./Board";
+import Board from "../Board";
 
 const Game = () => {
   const [history, setHistory] = useState([{ squares: Array(9).fill(null) }]);
   const [locations, setLocations] = useState([{ col_row: [null, null] }]);
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXIsNext] = useState(true);
-
-  const Button = styled.button`
-    background-color: transparent;
-    border-color: white;
-    border-radius: 10px;
-    border-width: 1px;
-    color: white;
-  `;
 
   const handleClick = (i) => {
     const newHistory = history.slice(0, stepNumber + 1);
@@ -134,19 +126,20 @@ const Game = () => {
 
   return (
     <div>
-      <div className="title">TIC TAC TOE</div>
-      <div className="game">
-        <div className="game-board">
+      <GlobalStyle />
+      <Title>TIC TAC TOE</Title>
+      <StyledGame>
+        <GameBoard>
           <Board squares={current.squares} onClick={(i) => handleClick(i)} />
+        </GameBoard>
+        <div>
+          <GameInfo>
+            <StyledStatus>{status}</StyledStatus>
+            {restartButton}
+          </GameInfo>
+          <StyledList>{moves}</StyledList>
         </div>
-        <div className="game-info">
-          <div className="info-top">
-            <div className="status">{status}</div>
-            <div className="restart">{restartButton}</div>
-          </div>
-          <ol>{moves}</ol>
-        </div>
-      </div>
+      </StyledGame>
     </div>
   );
 };
